@@ -27,7 +27,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 
 
-
+// import the endpoints of Client
+app.use('/clients',require('./route/clients'));
 // Creating the Port of the server
 
 const PORT = process.env.PORT || 9000;

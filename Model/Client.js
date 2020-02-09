@@ -31,3 +31,5 @@ const ClientSchema = mongoose.Schema({
         default:Date.now
     }
 })
+
+module.exports = mongoose.model('clients',ClientSchema);
