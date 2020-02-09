@@ -54,4 +54,16 @@ async(req,res)=>{
 
 });
 
+
+router.get('/',async(req,res)=>{
+    try {
+        const clients = await Client.find();
+        res.json(clients);
+    } catch (error) {
+        console.log(error.message);
+        res.status(500).send('server Error');
+    }
+});
+
+
 module.exports = router;
