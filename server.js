@@ -1,12 +1,14 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-
+const connectDB = require('./config/db');
 
 // initializing express App
 
 const app = express();
 
+// Connecting Database
+connectDB();
 
 // Setting Cors options
 const corsOptions = {
