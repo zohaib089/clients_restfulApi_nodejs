@@ -66,4 +66,17 @@ router.get('/',async(req,res)=>{
 });
 
 
+router.get('/:id',async(req,res)=>{
+    const id = req.params.id;
+    try {
+        const client = await Client.findById(id);
+        res.json(client);
+    } catch (error) {
+        console.log(error.message);
+        res.status(500).send('Can not find the User');
+    }
+
+})
+
+
 module.exports = router;
